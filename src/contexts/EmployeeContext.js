@@ -13,7 +13,11 @@ const EmployeeContextProvider = (props) => {
     ])
 
     const addEmployee = (name,email,address,phone) => {
-      setEmployees([...employees, {id: uuidv4(), name, email, address,phone}])
+        setEmployees([...employees, {id: uuidv4(), name, email, address,phone}])
+    }
+
+    const updateEmployee = (id, updatedEmployee) => {
+        setEmployees(employees.map((employee)=> (employee.id === id ? updatedEmployee : employee)))
     }
 
     const deleteEmployee = (id) => {
@@ -21,7 +25,7 @@ const EmployeeContextProvider = (props) => {
     }
 
     return(
-        <EmployeeContext.Provider value ={{ employees,addEmployee,deleteEmployee}}>
+        <EmployeeContext.Provider value ={{ employees,addEmployee,deleteEmployee,updateEmployee}}>
             {props.children}
         </EmployeeContext.Provider>
     )
