@@ -76,7 +76,12 @@ const EmployeeList = () => {
             </tbody>
         </table>
 
-        <Pagination pages ={totalPagesNum } setCurrentPage={setCurrentPage}/>
+        <Pagination 
+        pages ={totalPagesNum } 
+        setCurrentPage={setCurrentPage}
+        currentEmployees={currentEmployees}
+        sortedEmployees = {sortedEmployees}
+        />
 
        <Modal show={show} onHide={handleClose}>
             <Modal.Header className="modal-header" closeButton>
