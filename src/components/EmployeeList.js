@@ -13,7 +13,7 @@ const EmployeeList = () => {
       const [showAlert,setShowAlert] = useState(false);
       const [show,setShow] = useState(false)
       const [currentPage ,setCurrentPage] = useState(1);
-      const [employeesPerPage] = useState(2)
+      const [employeesPerPage] = useState(5)
       
       const handleShow = () => setShow(true)
       const handleClose = () => setShow(false)

@@ -5,7 +5,7 @@ import EditForm from './EditForm';
 
 const Employee = ({ employee }) => {
 
-    const { deleteEmployee } = useContext(EmployeeContext)
+    const { dispatch } = useContext(EmployeeContext)
     const [show,setShow] = useState(false)
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
@@ -37,8 +37,8 @@ const Employee = ({ employee }) => {
                         <Tooltip id={`tooltip-top`}>
                             Delete
                         </Tooltip>
-                    }>
-                <button onClick={() => deleteEmployee(employee.id)} className="btn text-danger btn-act" data-toggle="modal"><i className="material-icons">&#xE872;</i></button>
+                    }>      
+                <button onClick={() => dispatch({type: 'remove_employee',id: employee.id})} className="btn text-danger btn-act" data-toggle="modal"><i className="material-icons">&#xE872;</i></button>
                 </OverlayTrigger>
             </td>
 

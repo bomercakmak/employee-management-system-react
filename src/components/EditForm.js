@@ -4,7 +4,7 @@ import {useContext,useState} from 'react';
 
 const EditForm = ({theEmployee}) => {
 
-    const {updateEmployee} = useContext(EmployeeContext);
+    const {dispatch} = useContext(EmployeeContext);
     const employee = theEmployee;
     const id = employee.id;
 
@@ -17,7 +17,7 @@ const EditForm = ({theEmployee}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateEmployee(id, updatedEmployee)
+        dispatch({type: 'update_employee',id,updatedEmployee})
     }
 
 
