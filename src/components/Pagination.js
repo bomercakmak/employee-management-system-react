@@ -17,23 +17,23 @@ const Pagination = ({pages,setCurrentPage,currentEmployees,sortedEmployees}) => 
         <div className="clearfix">
 				<div className="hint-text">Showing <b>{currentEmployees.length}</b> out of <b>{sortedEmployees.length}</b> entries</div>
 				<ul className="pagination">
-					<li className={`${currentButton === 1 ? 'page-item disabled' : 'page-item'}`}><a href="!#" className="page-link" 
+					<li className={`${currentButton === 1 ? 'page-item disabled' : 'page-item'}`}><button className="page-link" 
                         onClick={() => setCurrentButton((prev) => prev === 1 ? prev : prev - 1)}
-                    >Previous</a></li>
+                    >Previous</button></li>
                     { 
                         numOfPages.map((page, index) => {
                             return (
-                            <li key = {index} className={`${currentButton === page ? 'page-item active' : 'page-item'}`}><a href="!#" className="page-link"
+                            <li key = {index} className={`${currentButton === page ? 'page-item active' : 'page-item'}`}><button className="page-link"
                             onClick={() => setCurrentButton (page)}
-                            >{page}</a></li>
+                            >{page}</button></li>
                             )
                             
                         })
                     }
 
-                    <li className={`${currentButton === numOfPages.length ? 'page-item disabled' : 'page-item'}`}><a href="!#" className="page-link" 
+                    <li className={`${currentButton === numOfPages.length ? 'page-item disabled' : 'page-item'}`}><button className="page-link" 
                         onClick={() => setCurrentButton((prev) => prev === 0 ? prev : prev + 1)}
-                    >Next</a></li>
+                    >Next</button></li>
 			
 			
 				</ul>
